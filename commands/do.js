@@ -10,7 +10,7 @@ module.exports = {
             .setColor('#0099ff')
             .setTitle(args[1])
     
-    channel.send(toDo);
+    Discord.channel.send(toDo);
 
     },
 
