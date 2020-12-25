@@ -1,13 +1,24 @@
+const fs = require('fs');
 const Discord = require("discord.js");
 const client = new Discord.Client();
+client.commands = new Discord.Collection();
 
 const prefix = "!";
+
+
+
+const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+
+for (const file of commandFiles){
+    const command = require(`./commands/${file}`);
+    client.commands.set(command.name, command);
+}
 
 client.on("ready", () =>{
     console.log("Judy lance la DS");
 });
 
-client.on("message",function(message){
+/*client.on("message",function(message){
     if (message.author.bot) return;
     if(!message.content.startsWith(prefix)) return;
 
@@ -19,14 +30,13 @@ client.on("message",function(message){
         const timeTaken = Date.now() - message.createdTimestamp;
         message.reply(`pong! ${timeTaken}ms`);
     }
-    else if (command == "sum"){
-        const numArgs = args.map(x => parseFloat(x));
-        const sum = numArgs.reduce((counter,x) => counter += x);
-        message.reply(`la réponse est ${sum}`);
-    }
+   
+    
 
 
-});
+});*/
+
+client.on('error', console.error);
 
 client.login(process.env.BOT_TOKEN);
 
