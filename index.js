@@ -4,6 +4,10 @@ const client = new Discord.Client();
 
 const prefix = "!";
 
+client.on("ready", () =>{
+    console.log("Bot lancé");
+});
+
 client.on("message",function(message){
     if (message.author.bot) return;
     if(!message.content.startsWith(prefix)) return;
