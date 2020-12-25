@@ -9,9 +9,10 @@ module.exports = {
         const toDo = new Discord.MessageEmbed()
             .setColor('#0099ff')
             .setTitle(args[1])
-    
-    Discord.channel.send(toDo);
+        
+    message.reply(todo);
 
     },
+   
 
 };
