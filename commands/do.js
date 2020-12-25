@@ -6,11 +6,12 @@ module.exports = {
     name : "do",
     description : "crée une carte dans #build-a-faire",
     execute(message, args){
-        const toDo = new Discord.MessageEmbed()
-            .setColor('#0099ff')
-            .setTitle(args[1])
+        message.channel.send(new Discord.MessageEmbed()
+        .setColor('#0099ff')
+        .setTitle(args[0])
         
-    message.reply(toDo);
+        );
+
 
     },
    

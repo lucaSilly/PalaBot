@@ -16,6 +16,7 @@ for (const file of commandFiles){
 
 client.on("ready", () =>{
     console.log("Judy lance la DS");
+    
 });
 
 client.on('message', message => {
