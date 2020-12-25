@@ -18,8 +18,11 @@ client.on("message",function(message){
     if (command == "ping"){
         const timeTaken = Date.now() - message.createdTimestamp;
         message.reply(`pong! ${timeTaken}ms`);
-        
-        
+    }
+    else if (command == "sum"){
+        const numArgs = args.map(x => parseFloat(x));
+        const sum = numArgs.reduce((counter,x) => counter += x);
+        message.reply(`la réponse est ${sum}`);
     }
 
 
