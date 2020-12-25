@@ -18,6 +18,29 @@ client.on("ready", () =>{
     console.log("Judy lance la DS");
 });
 
+client.on('message', message => {
+    if (message.author.bot) return;
+    if(!message.content.startsWith(prefix)) return;
+
+    const args = message.content.slice(prefix.length).trim().split(' ');
+    const command = args.shift().toLowerCase();
+
+    if(!client.commands.has(command)) return;
+
+    try {
+        client.commands.get(command).execute(message, args);
+    }
+    catch (error) {
+        console.error(error);
+        console.log('commande inexistante')
+    }
+
+});
+
+
+
+
+
 /*client.on("message",function(message){
     if (message.author.bot) return;
     if(!message.content.startsWith(prefix)) return;
