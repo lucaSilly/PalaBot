@@ -15,8 +15,7 @@ module.exports = {
         .addField("Builders :", args[3])
         .setTimestamp()
         .setFooter("Palabuild",'https://i.imgur.com/wSTFkRM.png')
-        );
-        message.react(':white_check_mark:')
+        ).react(':white_check_mark:')
             .then(()=> message.react(':clock10:'))
             .then(() => message.react(':heavy_plus_sign:'))
             .catch(() => console.error("une réaction ne charge pas"));
