@@ -13,10 +13,10 @@ module.exports = {
         .addField("Builders :", args[3])
         .setTimestamp()
         .setFooter("Palabuild",'https://i.imgur.com/wSTFkRM.png')
-        ).then( msg => {
-            msg.react(':white_check_mark:');
-            msg.react(':heavy_plus_sign:')
-            msg.react(':heavy_plus_sign:')
+        ).then( async msg => {
+            await msg.react(':white_check_mark:');
+            await msg.react(':heavy_plus_sign:')
+            await msg.react(':heavy_plus_sign:')
         });
         /*react(':white_check_mark:')
             .then(()=> message.react(':clock10:'))
