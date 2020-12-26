@@ -11,7 +11,7 @@ module.exports = {
         .setTitle(args[0])
         .addField("Deadline : ", args[1])
         .addField("\u200B","\u200B")
-        .addField("Builders :", args(2))
+        .addField("Builders :", args[2])
         
         );
 
