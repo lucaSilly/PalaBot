@@ -19,7 +19,7 @@ module.exports = {
         message.react(':white_check_mark:')
             .then(()=> message.react(':clock10:'))
             .then(() => message.react(':heavy_plus_sign:'))
-            .catch(() => console.error(error));
+            .catch(() => console.error("une réaction ne charge pas"));
 
 
 
