@@ -33,7 +33,7 @@ client.on('message', message => {
     }
     catch (error) {
         console.error(error);
-        console.log('commande inexistante')
+        console.log('Erreur dans la commande')
     }
 
 });
