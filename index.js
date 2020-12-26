@@ -16,7 +16,7 @@ for (const file of commandFiles){
 
 client.on("ready", () =>{
     console.log("Judy lance la DS");
-    client.channels.cache.get("791360455431290900").send("Bot démaré :white_check_mark:");
+    client.channels.cache.get("791360455431290900").send("Bot démarré :white_check_mark:");
 });
 
 client.on('message', message => {

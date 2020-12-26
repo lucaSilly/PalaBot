@@ -9,9 +9,8 @@ module.exports = {
         message.channel.send(new Discord.MessageEmbed()
         .setColor('#0099ff')
         .setTitle(args[0])
-        .setDescription(args[1])
-        .addField("Deadline : ", args[2])
-        .addField("\u200B")
+        .setDescription(args[1]+" ")
+        .addField("Deadline : ", args[2]+"u200B")
         .addField("Builders :", args[3])
         
         );
