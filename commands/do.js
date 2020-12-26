@@ -10,7 +10,7 @@ module.exports = {
         .setColor('#0099ff')
         .setTitle(args[0])
         .setDescription(args[1]+" ")
-        .addField("Deadline : ", args[2]+"u200B")
+        .addField("Deadline : ", args[2]+"\u200B")
         .addField("Builders :", args[3])
         
         );
