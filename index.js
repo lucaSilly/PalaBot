@@ -45,7 +45,7 @@ client.on('messageReactionAdd', (messageReaction, user)=>{
         client.channels.cache.get("791360455431290900").send('ça marche ouesh');
         const embed = new Discord.MessageEmbed()
             .setColor('#32a836')
-        client.channels.cache.get("791360455431290900").edit(embed);
+        messageReaction.message.edit(embed);
         
     }
 
