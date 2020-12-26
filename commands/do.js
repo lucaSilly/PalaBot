@@ -7,7 +7,7 @@ module.exports = {
         args = args.filter(arg => arg != "");
         message.channel.send(new Discord.MessageEmbed()
         .setColor('#D94A2E')
-        .setTitle(args[0])
+        .setTitle(message.channel.name)
         .setDescription(args[1]+ " ")
         .addField("Deadline : ", args[2])
         .addField("Builders :", args[3])
@@ -18,11 +18,6 @@ module.exports = {
             await msg.react('🕑')
             await msg.react('➕')
         });
-        /*react(':white_check_mark:')
-            .then(()=> message.react(':clock10:'))
-            .then(() => message.react(':heavy_plus_sign:'))
-            .catch(() => console.error("une réaction ne charge pas"));*/
-
 
     },
    
