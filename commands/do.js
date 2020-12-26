@@ -12,7 +12,7 @@ module.exports = {
         .addField("Deadline : ", args[2])
         .addField("Builders :", args[3])
         .setTimestamp()
-        .setFooter("Palabuild",'https://i.imgur.com/wSTFkRM.png')
+        .setFooter("Palabuild",'https://i.imgur.com/07vjqlZ.jpg')
         ).then( async msg => {
             await msg.react('✅');
             await msg.react('🕑')
