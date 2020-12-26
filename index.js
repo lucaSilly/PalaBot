@@ -40,7 +40,7 @@ client.on('message', message => {
 
 client.on('messageReactionAdd', (messageReaction, user)=>{
     if(messageReaction.emoji.name=='✅'){
-       messageReaction.send("ça marche ouesh");
+       messageReaction.message.send("ça marche ouesh");
     }
 
 });
