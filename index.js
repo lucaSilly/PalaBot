@@ -16,8 +16,8 @@ for (const file of commandFiles){
 
 client.on("ready", () =>{
     console.log("Judy lance la DS");
-    client.channels.cache.find(channel => channel.name == "dev").send("Vas'y franky");
-    
+    //client.channels.cache.find(channel => channel.name == "dev").send("Vas'y franky");
+    client.channels.cache.get("dev").send("Bot démaré :white_check");
 });
 
 client.on('message', message => {
