@@ -43,8 +43,7 @@ client.on('messageReactionAdd', (messageReaction, user)=>{
     if(!messageReaction.message.author.bot) return;
     if(messageReaction.emoji.name=='✅'){
         client.channels.cache.get("791360455431290900").send('ça marche ouesh');
-        const embed = new Discord.MessageEmbed(messageReaction.message.embeds)
-            .setColor('#32a836')
+        const embed = new Discord.MessageEmbed(messageReaction.message.embeds[0]).setColor('#32a836');
         messageReaction.message.edit(embed);
         
     }
