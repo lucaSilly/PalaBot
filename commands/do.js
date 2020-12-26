@@ -1,11 +1,12 @@
 const Discord = require('discord.js');
+client.commands = new Discord.Collection();
 
 module.exports = {
     name : "do",
     description : "crée une carte dans #build-a-faire",
     execute(message, args){
         args = args.filter(arg => arg != "");
-        message.channel.send(new Discord.MessageEmbed()
+        client.channels.cache.get("746484079138046052").send(new Discord.MessageEmbed()
         .setColor('#D94A2E')
         .setTitle(message.channel.name)
         .setDescription(args[1]+ " ")
