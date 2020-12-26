@@ -14,9 +14,9 @@ module.exports = {
         .setTimestamp()
         .setFooter("Palabuild",'https://i.imgur.com/wSTFkRM.png')
         ).then( async msg => {
-            await msg.react(':white_check_mark:');
-            await msg.react(':clock10:')
-            await msg.react(':heavy_plus_sign:')
+            await msg.react('✅');
+            await msg.react('🕑')
+            await msg.react('➕')
         });
         /*react(':white_check_mark:')
             .then(()=> message.react(':clock10:'))
