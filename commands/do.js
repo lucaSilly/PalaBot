@@ -8,7 +8,7 @@ module.exports = {
     description : "crée une carte dans #build-a-faire",
     execute(message, args){
         args = args.filter(arg => arg != "");
-        client.channels.cache.get("746484079138046052").send(new Discord.MessageEmbed()
+        message.client.channels.cache.get("746484079138046052").send(new Discord.MessageEmbed()
         .setColor('#D94A2E')
         .setTitle(message.channel.name)
         .setDescription(args[1]+ " ")
