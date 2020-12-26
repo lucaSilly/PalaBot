@@ -38,6 +38,14 @@ client.on('message', message => {
 
 });
 
+client.on('messageReactionAdd', (messageReaction, user)=>{
+    if(messageReaction.emoji.name=='✅'){
+        message.send("ça marche ouesh");
+    }
+
+});
+
+
 
 client.on('error', console.error);
 
