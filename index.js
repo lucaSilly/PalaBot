@@ -40,6 +40,7 @@ client.on('message', message => {
 
 client.on('messageReactionAdd', (messageReaction, user)=>{
     if(user.id == client.user.id) return;
+    if(!messageReaction.message.author.bot) return;
     if(messageReaction.emoji.name=='✅'){
         client.channels.cache.get("791360455431290900").send('ça marche ouesh');
         client.channels.cache.get("791360455431290900").send(new Discord.MessageEmbed(messageReaction.message).setColor('#34eb46'));
