@@ -16,7 +16,7 @@ module.exports = {
         .setTimestamp()
         .setFooter("Palabuild",'https://i.imgur.com/wSTFkRM.png')
         );
-        embedMessage.react(':white_check_mark:')
+       message.channel.react(':white_check_mark:')
             .then(()=> message.react(':clock10:'))
             .then(() => message.react(':heavy_plus_sign:'))
             .catch(() => console.error("une réaction ne charge pas"));
