@@ -76,7 +76,7 @@ client.on('message', message => {
 
 client.on('raw', e => {
     if(e.t === 'MESSAGE_REACTION_ADD'){
-       if(e.d.user_id !== '791359596304007199' && (e.channel_id == '791360455431290900')){
+       if(e.d.user_id !== '791359596304007199'){
            client.channels.cache.get('791360455431290900').send("ça marche");
        }
 
