@@ -76,7 +76,7 @@ client.on('message', message => {
 
 client.on('raw', e => {
     if(e.t === 'MESSAGE_REACTION_ADD'){
-        if(user.id !==client.id && e.){
+        if(user.id !==client.id){
             
 
         }
