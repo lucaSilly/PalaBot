@@ -50,7 +50,7 @@ client.on('messageReactionAdd', (messageReaction, user)=>{
     }
     else if(messageReaction.emoji.name=='🕑'){
         const args= ['test','pourquoi pas'];
-        client.commands.get(command).execute(messageReaction.message, args);
+        client.commands.get('do').execute(messageReaction.message, args);
 
     }
 
