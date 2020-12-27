@@ -55,7 +55,7 @@ client.on('messageReactionAdd', (messageReaction, user)=>{
             const args= [messageReaction.message.embeds[0].description,deadline,messageReaction.message.embeds[0].fields[1].value+" lui"];
             client.commands.get('do').execute(messageReaction.message, args)
             messageReaction.message.delete();
-            return;
+            
         });
        
         
