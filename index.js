@@ -50,9 +50,9 @@ client.on('messageReactionAdd', (messageReaction, user)=>{
     }
     else if(messageReaction.emoji.name=='🕑'){
         const args= ['#'+messageReaction.message.channel+' ','pourquoi pas',messageReaction.message.embeds[0].fields[0].value+" lui"];
-        client.commands.get('do').execute(messageReaction.message, args).then(msg => {
-            msg.delete();
-        });
+        client.commands.get('do').execute(messageReaction.message, args)
+            messageReaction.message.delete();
+        
 
     }
 
