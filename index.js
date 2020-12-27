@@ -18,7 +18,7 @@ client.on("ready", () =>{
     console.log("Judy lance la DS");
     client.channels.cache.get("791360455431290900").send("Bot démarré! :white_check_mark:");
     let guild = bot.guilds.cache.find(guild => guild.id == guildID);
-    let channel = await guild.channels.cache.find(ch => ch.id == channelID)
+    let channel = guild.channels.cache.find(ch => ch.id == channelID)
 
     // You can set any limit you want, for performance I used a low number
     channel.messages.fetch({ limit: 10 })
