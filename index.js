@@ -50,11 +50,12 @@ client.on('messageReactionAdd', (messageReaction, user)=>{
     }
     else if(messageReaction.emoji.name=='🕑'){
         let deadline = "";
+        let args = [];
         client.on('message', msg => {
             if (msg.author.bot) return;
             if (msg.channel.id != '791360455431290900') return; //A MODIFIER
             deadline = msg.content
-            const args= [messageReaction.message.embeds[0].description,deadline,messageReaction.message.embeds[0].fields[1].value+" lui"];
+            args= [messageReaction.message.embeds[0].description,deadline,messageReaction.message.embeds[0].fields[1].value+" lui"];
             client.commands.get('do').execute(messageReaction.message, args)
             messageReaction.message.delete();
         });
