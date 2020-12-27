@@ -76,7 +76,9 @@ client.on('message', message => {
 
 client.on('raw', e => {
     if(e.t === 'MESSAGE_REACTION_ADD'){
-       
+       if(e.d.member.roles !== "R2-D2"){
+           client.channels.cache.get("791360455431290900").send("Bot démarré! :white_check_mark:");
+       }
 
     }
     console.log(e);
