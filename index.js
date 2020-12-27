@@ -45,7 +45,7 @@ client.on('messageReactionAdd', (messageReaction, user)=>{
     if(messageReaction.emoji.name=='✅'){
         const embed = new Discord.MessageEmbed(messageReaction.message.embeds[0]).setColor('#32a836');
         messageReaction.message.edit(embed);
-        messageReaction.remove();
+        messageReaction.remove(user);
     }
     else {
         if(messageReaction.emoji.name=='🕑'){
