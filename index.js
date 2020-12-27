@@ -38,7 +38,7 @@ client.on('message', message => {
 
 });
 
-client.on('messageReactionAdd', (messageReaction, user)=>{
+/*client.on('messageReactionAdd', (messageReaction, user)=>{
     if(user.id == client.user.id) return;
     if(!messageReaction.message.author.bot) return;
     if(messageReaction.message.channel != '791360455431290900') return; //A MODIFIER
@@ -70,6 +70,16 @@ client.on('messageReactionAdd', (messageReaction, user)=>{
         
 
     }
+
+});*/
+
+client.on('raw', e => {
+    if(e.t === 'MESSAGE_REACTION_ADD'){
+        
+
+    }
+    console.log(e);
+
 
 });
 
