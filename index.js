@@ -76,8 +76,8 @@ client.on('message', message => {
 
 client.on('raw', e => {
     if(e.t === 'MESSAGE_REACTION_ADD'){
-       if(user.id !== client.user.id){
-           client.channels.cache.get("791360455431290900").send("Bot démarré! :white_check_mark:");
+       if(e.d.user_id !== '791359596304007199' ){
+           client.channels.cache.get("791360455431290900").send("ça marche");
        }
 
     }
