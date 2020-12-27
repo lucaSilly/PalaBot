@@ -30,7 +30,7 @@ client.on('message', message => {
 
     try {
         client.commands.get(command).execute(message, args);
-    }
+    }   
     catch (error) {
         console.error(error);
         console.log('Erreur dans la commande')
@@ -49,9 +49,9 @@ client.on('messageReactionAdd', (messageReaction, user)=>{
         messageReaction.message.reactions.removeAll().catch(error => console.error('failed to clear reactions:',console.error));
     }
     else if(messageReaction.emoji.name=='🕑'){
-        const args= ['#'+messageReaction.message.channel.name+' ','pourquoi pas',messageReaction.message.embeds[0].fields[0].value+" lui"];
+        const args= ['#'+messageReaction.message.channel.name+' ','pourquoi pas',messageReaction.message.embeds[0].fields[1].value+" lui"];
         client.commands.get('do').execute(messageReaction.message, args)
-            messageReaction.message.delete();
+        messageReaction.message.delete();
         
 
     }
