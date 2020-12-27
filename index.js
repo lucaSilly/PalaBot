@@ -52,7 +52,7 @@ client.on('messageReactionAdd', (messageReaction, user)=>{
         let deadline = "";
         client.on('message', msg => {
             if (msg.author.bot) return;
-            if (msg.channel !== '791360455431290900') return; //A MODIFIER
+            if (msg.channel.id != '791360455431290900') return; //A MODIFIER
             deadline = msg.content
             const args= [messageReaction.message.embeds[0].description,deadline,messageReaction.message.embeds[0].fields[1].value+" lui"];
             client.commands.get('do').execute(messageReaction.message, args)
