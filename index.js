@@ -49,7 +49,8 @@ client.on('messageReactionAdd', (messageReaction, user)=>{
         messageReaction.message.reactions.removeAll().catch(error => console.error('failed to clear reactions:',console.error));
     }
     else if(messageReaction.emoji.name=='🕑'){
-        const embed = new Discord.MessageEmbed(messageReaction.message.embeds[0]).addField("Deadline : ", "test");
+        const embed = new Discord.MessageEmbed(messageReaction.message.embeds[0]).addField(messageReaction.message.embeds[0].fields[0].name, "test");
+        
         messageReaction.message.edit(embed);
 
     }
