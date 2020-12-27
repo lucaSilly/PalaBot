@@ -56,10 +56,12 @@ client.on('messageReactionAdd', (messageReaction, user)=>{
             if (msg.channel.id != '791360455431290900') return; //A MODIFIER
             deadline = msg.content
             args= [messageReaction.message.embeds[0].description,deadline,messageReaction.message.embeds[0].fields[1].value+" lui"];
+            client.commands.get('do').execute(messageReaction.message, args)
+            messageReaction.message.delete();
+            console.log("test");
             
         });
-        client.commands.get('do').execute(messageReaction.message, args)
-        messageReaction.message.delete();
+        
        
         
 
