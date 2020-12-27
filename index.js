@@ -51,11 +51,12 @@ client.on('messageReactionAdd', (messageReaction, user)=>{
     else if(messageReaction.emoji.name=='🕑'){
         let deadline = "";
         client.on('message', msg => {
-            deadline = msg.content;
+            deadline = msg.content
+            const args= [messageReaction.message.embeds[0].description,deadline,messageReaction.message.embeds[0].fields[1].value+" lui"];
+            client.commands.get('do').execute(messageReaction.message, args)
+            messageReaction.message.delete();
         });
-        const args= [messageReaction.message.embeds[0].description,deadline,messageReaction.message.embeds[0].fields[1].value+" lui"];
-        client.commands.get('do').execute(messageReaction.message, args)
-        messageReaction.message.delete();
+       
         
 
     }
