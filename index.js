@@ -17,35 +17,6 @@ for (const file of commandFiles){
 client.on("ready", () =>{
     console.log("Judy lance la DS");
     client.channels.cache.get("791360455431290900").send("Bot démarré! :white_check_mark:");
-    let guild = bot.guilds.cache.find(guild => guild.id == guildID);
-    let channel = guild.channels.cache.find(ch => ch.id == channelID)
-
-    // You can set any limit you want, for performance I used a low number
-    channel.messages.fetch({ limit: 10 })
-        .then(async messages => {
-            messages.forEach(async message => {
-
-                if (message.partial) await message.fetch();
-                if (!message.guild) return;
-
-                for (let reactionObj of message.reactions.cache) {
-                    for (let reaction of reactionObj) {
-                        if (typeof reaction == "string") continue;
-                        if (reaction.emoji.id != emojiID) continue;
-                        reaction.users.fetch()
-                            .then(async users => {
-                                users.forEach(async user => {
-                                    if (user.bot) return;
-                                    console.log("Adding role")
-                                    await reaction.message.guild.members.cache.get(user.id).roles.add(roleID)
-                                })
-                            })
-                    }
-                }
-
-            });
-        })
-        .catch(console.error);
 });
 
 client.on('message', message => {
