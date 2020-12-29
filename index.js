@@ -45,7 +45,7 @@ client.on('raw', e => {
     if(e.t === 'MESSAGE_REACTION_ADD'){
             client.channels.cache.get(e.d.channel_id).messages.fetch(e.d.message_id).then(msg => {
                 //MESSAGE BUILD - A - FAIRE
-                if(msg.author.bot && e.d.channel_id == '791360455431290900' && e.d.user_id !== '791359596304007199' ){    //a changer
+                if(msg.author.bot && e.d.channel_id == '746484079138046052' && e.d.user_id !== '791359596304007199' ){    //a changer
                     switch (e.d.emoji.name){
                         case '✅' :
                             const embed = new Discord.MessageEmbed(msg.embeds[0]).setColor('#32a836');  
@@ -58,10 +58,10 @@ client.on('raw', e => {
                             let args = [];
                             let compteur = false;
                             client.on('message', message => {
-                                if(!message.author.bot && e.d.channel_id == '791360455431290900' && !compteur){
+                                if(!message.author.bot && message.channel.id == '746484079138046052' && !compteur){
                                     compteur = true;
                                     deadline = message.content;
-                                    args= [msg.embeds[0].description,deadline,msg.embeds[0].fields[1].value+" lui"];
+                                    args= [msg.embeds[0].description,deadline,msg.embeds[0].fields[1].value,msg.embeds[0].fields[2].value,msg.embeds[0].fields[3].value];
                                     client.commands.get('do').execute(msg, args);
                                     message.delete();
                                     msg.delete();
@@ -70,7 +70,37 @@ client.on('raw', e => {
                             break;
                         
                         case '🛠️' :
+                            let builders = "";
+                            let args2 = [];
+                            let compteur2 = false;
+                            client.on('message', message => {
+                                if(!message.author.bot && message.channel.id == '746484079138046052' && !compteur2){
+                                    compteur2 = true;
+                                    builders = message.content;
+                                    args2= [msg.embeds[0].description,msg.embeds[0].fields[0].value,builders,msg.embeds[0].fields[2].value,msg.embeds[0].fields[3].value];
+                                    client.commands.get('do').execute(msg, args2);
+                                    message.delete();
+                                    msg.delete();
+                                }
+                            });
                             break;
+                        
+                        case '🏛️' :
+                            let warp = "";
+                            let args3 = [];
+                            let compteur3 = false;
+                            client.on('message', message => {
+                                if(!message.author.bot && message.channel.id == '746484079138046052' && !compteur3){
+                                    compteur3 = true;
+                                    warp = message.content;
+                                    args3 = [msg.embeds[0].description,msg.embeds[0].fields[0].value,msg.embeds[0].fields[1].value,msg.embeds[0].fields[2].value,warp];
+                                    client.commands.get('do').execute(msg, args3);
+                                    message.delete();
+                                    msg.delete();
+                                }
+                            });
+                            break;
+                           
 
                         default :
                             console.log('emoji non reconnu');
@@ -84,5 +114,5 @@ client.on('raw', e => {
 
 client.on('error', console.error);
 
-//client.login(process.env.BOT_TOKEN);
-client.login(require("./config.json").BOT_TOKEN)
+client.login(process.env.BOT_TOKEN);
+//client.login(require("./config.json").BOT_TOKEN)
