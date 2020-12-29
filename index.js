@@ -4,6 +4,8 @@ const { userInfo } = require('os');
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
 
+
+
 const prefix = "$";
 
 
@@ -76,10 +78,18 @@ client.on('message', message => {
 
 client.on('raw', e => {
     if(e.t === 'MESSAGE_REACTION_ADD'){
-       if(e.d.user_id !== '791359596304007199'){
-           client.channels.cache.get('791360455431290900').send("ça marche");
-       }
+        
+        client.channels.get(e.channel_id).fetchMessage(e.d.message_id)
+        client.channels.cache.get('791360455431290900').send("ça marche pio");
+        if(e.d.user_id !== '791359596304007199'){
+            client.channels.cache.get('791360455431290900').send("ça marche");   //check si bon channel
+            const embed = new Discord.MessageEmbed(msg.embeds[0]).setColor('#32a836');
+            msg.edit(embed);
+       }    
 
+        
+        
+        
     }
     console.log(e);
 
@@ -91,4 +101,4 @@ client.on('raw', e => {
 client.on('error', console.error);
 
 client.login(process.env.BOT_TOKEN);
-
+//client.login(require("./config.json").BOT_TOKEN)
