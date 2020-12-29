@@ -41,64 +41,48 @@ client.on('message', message => {
 
 });
 
-/*client.on('messageReactionAdd', (messageReaction, user)=>{
-    if(user.id == client.user.id) return;
-    if(!messageReaction.message.author.bot) return;
-    if(messageReaction.message.channel != '791360455431290900') return; //A MODIFIER
-
-    if(messageReaction.emoji.name=='✅'){
-        const embed = new Discord.MessageEmbed(messageReaction.message.embeds[0]).setColor('#32a836');
-        messageReaction.message.edit(embed);
-        messageReaction.message.reactions.removeAll().catch(error => console.error('failed to clear reactions:',console.error));
-    }
-    else if(messageReaction.emoji.name=='🕑'){
-        let deadline = "";
-        let args = [];
-        let compteur = false;
-        client.on('message', msg => {
-            if (msg.author.bot) return;
-            if (msg.channel.id != '791360455431290900') return; //A MODIFIER
-            if (compteur) return;
-            compteur = true;
-            deadline = msg.content
-            args= [messageReaction.message.embeds[0].description,deadline,messageReaction.message.embeds[0].fields[1].value+" lui"];
-            client.commands.get('do').execute(messageReaction.message, args)
-            messageReaction.message.delete();
-            console.log("test");
-            
-        });
-        
-        
-       
-        
-
-    }
-
-});*/
-
 client.on('raw', e => {
     if(e.t === 'MESSAGE_REACTION_ADD'){
-        
-        client.channels.get(e.channel_id).fetchMessage(e.d.message_id)
-        client.channels.cache.get('791360455431290900').send("ça marche pio");
-        if(e.d.user_id !== '791359596304007199'){
-            client.channels.cache.get('791360455431290900').send("ça marche");   //check si bon channel
-            const embed = new Discord.MessageEmbed(msg.embeds[0]).setColor('#32a836');
-            msg.edit(embed);
-       }    
+            client.channels.cache.get(e.d.channel_id).messages.fetch(e.d.message_id).then(msg => {
+                //MESSAGE BUILD - A - FAIRE
+                if(msg.author.bot && e.d.channel_id == '791360455431290900' && e.d.user_id !== '791359596304007199' ){    //a changer
+                    switch (e.d.emoji.name){
+                        case '✅' :
+                            const embed = new Discord.MessageEmbed(msg.embeds[0]).setColor('#32a836');  
+                            msg.edit(embed);
+                            msg.reactions.removeAll();
+                            break;
 
-        
-        
-        
-    }
-    console.log(e);
+                        case '🕑' :
+                            let deadline = "";
+                            let args = [];
+                            let compteur = false;
+                            client.on('message', message => {
+                                if(!message.author.bot && e.d.channel_id == '791360455431290900' && !compteur){
+                                    compteur = true;
+                                    deadline = message.content;
+                                    args= [msg.embeds[0].description,deadline,msg.embeds[0].fields[1].value+" lui"];
+                                    client.commands.get('do').execute(msg, args);
+                                    message.delete();
+                                    msg.delete();
+                                }
+                            });
+                            break;
+                        
+                        case '🛠️' :
+                            break;
 
-
-});
+                        default :
+                            console.log('emoji non reconnu');
+                        };
+                    }
+                });
+            }
+        });
 
 
 
 client.on('error', console.error);
 
-client.login(process.env.BOT_TOKEN);
-//client.login(require("./config.json").BOT_TOKEN)
+//client.login(process.env.BOT_TOKEN);
+client.login(require("./config.json").BOT_TOKEN)
