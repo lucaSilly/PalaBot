@@ -25,11 +25,11 @@ module.exports = {
             await msg.react('🏛️');
         });
     message.delete();
-       
+    console.log(message);
     },
 
     
    
-    //ajouter commanditaire, commande pour y accèder (quand validation de fin de map?),
+
 
 };

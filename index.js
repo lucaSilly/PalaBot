@@ -100,7 +100,7 @@ client.on('raw', e => {
                                 }
                             });
                             break;
-                           
+                                            // TITRE  -> description (#taverne) sans le "#"
 
                         default :
                             console.log('emoji non reconnu');
