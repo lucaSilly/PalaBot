@@ -82,7 +82,6 @@ client.on('raw', e => {
                                     client.commands.get('modifDo').execute(msg, args2);
                                     message.delete();
                                     msg.delete();
-                                    console.log(args2);
                                 }
                             });
                             break;
