@@ -24,7 +24,6 @@ module.exports = {
             await msg.react('🛠️');
             await msg.react('🏛️');
         });
-    console.log(message);
     message.delete();
     
     },

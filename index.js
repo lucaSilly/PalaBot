@@ -85,7 +85,7 @@ client.on('raw', e => {
                                     compteur2 = true;
                                     builders = message.content;
                                     titre2 = msg.embeds[0].titre;
-                                    desc3 = msg.embeds[0].description;
+                                    desc2 = msg.embeds[0].description;
                                     args2= [titre2,des2,msg.embeds[0].fields[0].value,builders,msg.embeds[0].fields[2].value,msg.embeds[0].fields[3].value];
                                     client.commands.get('do').execute(msg, args2);
                                     message.delete();
