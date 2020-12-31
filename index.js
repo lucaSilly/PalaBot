@@ -64,8 +64,8 @@ client.on('raw', e => {
                                 if(!message.author.bot && message.channel.id == '746484079138046052' && !compteur){
                                     compteur = true;
                                     deadline = message.content;
-                                    titre = msg.embed[0].titre;
-                                    desc = msg.embed[0].description;
+                                    titre = msg.embeds[0].titre;
+                                    desc = msg.embeds[0].description;
                                     args= [titre,desc,deadline,msg.embeds[0].fields[1].value,msg.embeds[0].fields[2].value,msg.embeds[0].fields[3].value];
                                     client.commands.get('do').execute(msg, args);
                                     message.delete();
@@ -84,8 +84,8 @@ client.on('raw', e => {
                                 if(!message.author.bot && message.channel.id == '746484079138046052' && !compteur2){
                                     compteur2 = true;
                                     builders = message.content;
-                                    titre2 = msg.embed[0].titre;
-                                    desc3 = msg.embed[0].description;
+                                    titre2 = msg.embeds[0].titre;
+                                    desc3 = msg.embeds[0].description;
                                     args2= [titre2,des2,msg.embeds[0].fields[0].value,builders,msg.embeds[0].fields[2].value,msg.embeds[0].fields[3].value];
                                     client.commands.get('do').execute(msg, args2);
                                     message.delete();
@@ -104,8 +104,8 @@ client.on('raw', e => {
                                 if(!message.author.bot && message.channel.id == '746484079138046052' && !compteur3){
                                     compteur3 = true;
                                     warp = message.content;
-                                    titre3 = msg.embed[0].titre;
-                                    desc3 = msg.embed[0].description;
+                                    titre3 = msg.embeds[0].titre;
+                                    desc3 = msg.embeds[0].description;
                                     args3 = [titre3,desc3,msg.embeds[0].fields[0].value,msg.embeds[0].fields[1].value,msg.embeds[0].fields[2].value,warp];
                                     client.commands.get('modifDo').execute(msg, args3);
                                     message.delete();
