@@ -4,7 +4,7 @@ client.commands = new Discord.Collection();
 
 
 module.exports = {
-    name : "do",
+    name : "modifDo",
     description : "crée une carte dans #build-a-faire",
     execute(message, args){
         args = args.filter(arg => arg != "");
