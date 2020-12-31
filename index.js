@@ -67,7 +67,7 @@ client.on('raw', e => {
                                     titre = msg.embeds[0].titre;
                                     desc = msg.embeds[0].description;
                                     args= [titre,desc,deadline,msg.embeds[0].fields[1].value,msg.embeds[0].fields[2].value,msg.embeds[0].fields[3].value];
-                                    client.commands.get('do').execute(msg, args);
+                                    client.commands.get('modifDo').execute(msg, args);
                                     message.delete();
                                     msg.delete();
                                 }
@@ -87,7 +87,7 @@ client.on('raw', e => {
                                     //titre2 = msg.embeds[0].titre;
                                     //desc2 = msg.embeds[0].description;
                                     args2= [msg.embeds[0].titre,msg.embeds[0].description,msg.embeds[0].fields[0].value,builders,msg.embeds[0].fields[2].value,msg.embeds[0].fields[3].value];
-                                    client.commands.get('do').execute(msg, args2);
+                                    client.commands.get('modifDo').execute(msg, args2);
                                     message.delete();
                                     msg.delete();
                                     console.log(args2);
