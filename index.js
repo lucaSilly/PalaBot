@@ -1,6 +1,7 @@
 const fs = require('fs');
 const Discord = require("discord.js");
 const { userInfo } = require('os');
+const { description } = require('./commands/do');
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
 
@@ -54,6 +55,8 @@ client.on('raw', e => {
                             break;
 
                         case '🕑' :
+                            let titre = "";
+                            let desc = "";
                             let deadline = "";
                             let args = [];
                             let compteur = false;
@@ -61,7 +64,9 @@ client.on('raw', e => {
                                 if(!message.author.bot && message.channel.id == '746484079138046052' && !compteur){
                                     compteur = true;
                                     deadline = message.content;
-                                    args= [msg.embeds[0].description,deadline,msg.embeds[0].fields[1].value,msg.embeds[0].fields[2].value,msg.embeds[0].fields[3].value];
+                                    titre = msg.embed[0].titre;
+                                    desc = msg.embed[0].description;
+                                    args= [titre,desc,deadline,msg.embeds[0].fields[1].value,msg.embeds[0].fields[2].value,msg.embeds[0].fields[3].value];
                                     client.commands.get('do').execute(msg, args);
                                     message.delete();
                                     msg.delete();
@@ -70,6 +75,8 @@ client.on('raw', e => {
                             break;
                         
                         case '🛠️' :
+                            let titre2 = "";
+                            let desc2 = "";
                             let builders = "";
                             let args2 = [];
                             let compteur2 = false;
@@ -77,7 +84,9 @@ client.on('raw', e => {
                                 if(!message.author.bot && message.channel.id == '746484079138046052' && !compteur2){
                                     compteur2 = true;
                                     builders = message.content;
-                                    args2= [msg.embeds[0].description,msg.embeds[0].fields[0].value,builders,msg.embeds[0].fields[2].value,msg.embeds[0].fields[3].value];
+                                    titre2 = msg.embed[0].titre;
+                                    desc3 = msg.embed[0].description;
+                                    args2= [titre2,des2,msg.embeds[0].fields[0].value,builders,msg.embeds[0].fields[2].value,msg.embeds[0].fields[3].value];
                                     client.commands.get('do').execute(msg, args2);
                                     message.delete();
                                     msg.delete();
@@ -86,6 +95,8 @@ client.on('raw', e => {
                             break;
                         
                         case '🏛️' :
+                            let titre3 = "";
+                            let desc3 = "";
                             let warp = "";
                             let args3 = [];
                             let compteur3 = false;
@@ -93,8 +104,10 @@ client.on('raw', e => {
                                 if(!message.author.bot && message.channel.id == '746484079138046052' && !compteur3){
                                     compteur3 = true;
                                     warp = message.content;
-                                    args3 = [msg.embeds[0].description,msg.embeds[0].fields[0].value,msg.embeds[0].fields[1].value,msg.embeds[0].fields[2].value,warp];
-                                    client.commands.get('do').execute(msg, args3);
+                                    titre3 = msg.embed[0].titre;
+                                    desc3 = msg.embed[0].description;
+                                    args3 = [titre3,desc3,msg.embeds[0].fields[0].value,msg.embeds[0].fields[1].value,msg.embeds[0].fields[2].value,warp];
+                                    client.commands.get('doModif').execute(msg, args3);
                                     message.delete();
                                     msg.delete();
                                 }

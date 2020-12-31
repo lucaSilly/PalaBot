@@ -10,12 +10,12 @@ module.exports = {
         args = args.filter(arg => arg != "");
         message.client.channels.cache.get("746484079138046052").send(new Discord.MessageEmbed() //A MODIFIER 
         .setColor('#D94A2E')
-        .setTitle(message.channel.name)
-        .setDescription(message.guild.channels.cache.get(channelid))
-        .addField("Deadline : ", args[1])
-        .addField("Builders :", args[2], true)
-        .addField("Commanditaire :", args[3], true)
-        .addField("Emplacement :", args[4])
+        .setTitle(args[10])
+        .setDescription(args[1])
+        .addField("Deadline : ", args[2])
+        .addField("Builders :", args[3], true)
+        .addField("Commanditaire :", args[4], true)
+        .addField("Emplacement :", args[5])
         .setTimestamp()
         .setFooter("| Palabuild - Build à faire",'https://i.imgur.com/07vjqlZ.jpg')
         ).then( async msg => {
