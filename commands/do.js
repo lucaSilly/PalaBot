@@ -11,7 +11,7 @@ module.exports = {
         message.client.channels.cache.get("746484079138046052").send(new Discord.MessageEmbed() //A MODIFIER 
         .setColor('#D94A2E')
         .setTitle(message.channel.name)
-        .setDescription(message.guild.channels.cache.get(channelid))
+        .setDescription(message.guild.channels.cache.get(message.channel.id))
         .addField("Deadline : ", args[1])
         .addField("Builders :", args[2], true)
         .addField("Commanditaire :", args[3], true)
