@@ -107,7 +107,7 @@ client.on('raw', e => {
                                     titre3 = msg.embed[0].titre;
                                     desc3 = msg.embed[0].description;
                                     args3 = [titre3,desc3,msg.embeds[0].fields[0].value,msg.embeds[0].fields[1].value,msg.embeds[0].fields[2].value,warp];
-                                    client.commands.get('doModif').execute(msg, args3);
+                                    client.commands.get('modifDo').execute(msg, args3);
                                     message.delete();
                                     msg.delete();
                                 }
