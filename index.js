@@ -55,8 +55,6 @@ client.on('raw', e => {
                             break;
 
                         case '🕑' :
-                            let titre = "";
-                            let desc = "";
                             let deadline = "";
                             let args = [];
                             let compteur = false;
@@ -64,9 +62,7 @@ client.on('raw', e => {
                                 if(!message.author.bot && message.channel.id == '746484079138046052' && !compteur){
                                     compteur = true;
                                     deadline = message.content;
-                                    titre = msg.embeds[0].title;
-                                    desc = msg.embeds[0].description;
-                                    args= [titre,desc,deadline,msg.embeds[0].fields[1].value,msg.embeds[0].fields[2].value,msg.embeds[0].fields[3].value];
+                                    args= [msg.embeds[0].title,msg.embeds[0].description,deadline,msg.embeds[0].fields[1].value,msg.embeds[0].fields[2].value,msg.embeds[0].fields[3].value];
                                     client.commands.get('modifDo').execute(msg, args);
                                     message.delete();
                                     msg.delete();
@@ -75,8 +71,6 @@ client.on('raw', e => {
                             break;
                         
                         case '🛠️' :
-                            let titre2 = "";
-                            let desc2 = "";
                             let builders = "";
                             let args2 = [];
                             let compteur2 = false;
@@ -84,8 +78,6 @@ client.on('raw', e => {
                                 if(!message.author.bot && message.channel.id == '746484079138046052' && !compteur2){
                                     compteur2 = true;
                                     builders = message.content;
-                                    //titre2 = msg.embeds[0].titre;
-                                    //desc2 = msg.embeds[0].description;
                                     args2= [msg.embeds[0].title,msg.embeds[0].description,msg.embeds[0].fields[0].value,builders,msg.embeds[0].fields[2].value,msg.embeds[0].fields[3].value];
                                     client.commands.get('modifDo').execute(msg, args2);
                                     message.delete();
@@ -96,8 +88,6 @@ client.on('raw', e => {
                             break;
                         
                         case '🏛️' :
-                            let titre3 = "";
-                            let desc3 = "";
                             let warp = "";
                             let args3 = [];
                             let compteur3 = false;
@@ -105,9 +95,7 @@ client.on('raw', e => {
                                 if(!message.author.bot && message.channel.id == '746484079138046052' && !compteur3){
                                     compteur3 = true;
                                     warp = message.content;
-                                    titre3 = msg.embeds[0].title;
-                                    desc3 = msg.embeds[0].description;
-                                    args3 = [titre3,desc3,msg.embeds[0].fields[0].value,msg.embeds[0].fields[1].value,msg.embeds[0].fields[2].value,warp];
+                                    args3 = [msg.embeds[0].title,msg.embeds[0].description,msg.embeds[0].fields[0].value,msg.embeds[0].fields[1].value,msg.embeds[0].fields[2].value,warp];
                                     client.commands.get('modifDo').execute(msg, args3);
                                     message.delete();
                                     msg.delete();
