@@ -86,7 +86,7 @@ client.on('raw', e => {
                                     builders = message.content;
                                     titre2 = msg.embeds[0].titre;
                                     desc2 = msg.embeds[0].description;
-                                    args2= [titre2,des2,msg.embeds[0].fields[0].value,builders,msg.embeds[0].fields[2].value,msg.embeds[0].fields[3].value];
+                                    args2= [titre2,desc2,msg.embeds[0].fields[0].value,builders,msg.embeds[0].fields[2].value,msg.embeds[0].fields[3].value];
                                     client.commands.get('do').execute(msg, args2);
                                     message.delete();
                                     msg.delete();
