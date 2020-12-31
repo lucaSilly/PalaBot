@@ -64,7 +64,7 @@ client.on('raw', e => {
                                 if(!message.author.bot && message.channel.id == '746484079138046052' && !compteur){
                                     compteur = true;
                                     deadline = message.content;
-                                    titre = msg.embeds[0].titre;
+                                    titre = msg.embeds[0].title;
                                     desc = msg.embeds[0].description;
                                     args= [titre,desc,deadline,msg.embeds[0].fields[1].value,msg.embeds[0].fields[2].value,msg.embeds[0].fields[3].value];
                                     client.commands.get('modifDo').execute(msg, args);
@@ -86,7 +86,7 @@ client.on('raw', e => {
                                     builders = message.content;
                                     //titre2 = msg.embeds[0].titre;
                                     //desc2 = msg.embeds[0].description;
-                                    args2= [msg.embeds[0].titre,msg.embeds[0].description,msg.embeds[0].fields[0].value,builders,msg.embeds[0].fields[2].value,msg.embeds[0].fields[3].value];
+                                    args2= [msg.embeds[0].title,msg.embeds[0].description,msg.embeds[0].fields[0].value,builders,msg.embeds[0].fields[2].value,msg.embeds[0].fields[3].value];
                                     client.commands.get('modifDo').execute(msg, args2);
                                     message.delete();
                                     msg.delete();
@@ -105,7 +105,7 @@ client.on('raw', e => {
                                 if(!message.author.bot && message.channel.id == '746484079138046052' && !compteur3){
                                     compteur3 = true;
                                     warp = message.content;
-                                    titre3 = msg.embeds[0].titre;
+                                    titre3 = msg.embeds[0].title;
                                     desc3 = msg.embeds[0].description;
                                     args3 = [titre3,desc3,msg.embeds[0].fields[0].value,msg.embeds[0].fields[1].value,msg.embeds[0].fields[2].value,warp];
                                     client.commands.get('modifDo').execute(msg, args3);
