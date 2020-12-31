@@ -10,7 +10,7 @@ module.exports = {
         args = args.filter(arg => arg != "");
         message.client.channels.cache.get("746484079138046052").send(new Discord.MessageEmbed() //A MODIFIER 
         .setColor('#D94A2E')
-        .setTitle(args[10])
+        .setTitle(args[0])
         .setDescription(args[1])
         .addField("Deadline : ", args[2])
         .addField("Builders :", args[3], true)
@@ -24,7 +24,6 @@ module.exports = {
             await msg.react('🛠️');
             await msg.react('🏛️');
         });
-    console.log(message);
     message.delete();
     
     },
